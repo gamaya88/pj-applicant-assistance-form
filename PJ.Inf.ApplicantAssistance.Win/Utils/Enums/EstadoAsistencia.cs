@@ -2,8 +2,7 @@
 {
     internal class EstadoAsistencia
     {
-        public const byte CREADA = 1;
-        public const byte IMPRESA = 2;
-        public const byte SUBIDA = 3;
+        public const byte SIN_ASISTENCIA = 1;
+        public const byte CON_ASISTENCIA = 2;
     }
 }

@@ -30,15 +30,15 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            txtPlaza = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            txtDependencia = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            materialTextBox28 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox27 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox26 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox25 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox24 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox23 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
+            txtEmail = new MaterialSkin.Controls.MaterialTextBox2();
+            txtTelefono = new MaterialSkin.Controls.MaterialTextBox2();
+            txtFicha = new MaterialSkin.Controls.MaterialTextBox2();
+            txtNombres = new MaterialSkin.Controls.MaterialTextBox2();
+            txtApellidos = new MaterialSkin.Controls.MaterialTextBox2();
+            txtDni = new MaterialSkin.Controls.MaterialTextBox2();
             tableLayoutPanel1.SuspendLayout();
             materialCard1.SuspendLayout();
             SuspendLayout();
@@ -55,21 +55,21 @@
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(385, 537);
+            tableLayoutPanel1.Size = new Size(385, 567);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.Controls.Add(txtPlaza);
+            materialCard1.Controls.Add(txtDependencia);
             materialCard1.Controls.Add(materialButton1);
-            materialCard1.Controls.Add(materialTextBox28);
-            materialCard1.Controls.Add(materialTextBox27);
-            materialCard1.Controls.Add(materialTextBox22);
-            materialCard1.Controls.Add(materialTextBox26);
-            materialCard1.Controls.Add(materialTextBox25);
-            materialCard1.Controls.Add(materialTextBox24);
-            materialCard1.Controls.Add(materialTextBox23);
-            materialCard1.Controls.Add(materialTextBox21);
+            materialCard1.Controls.Add(txtEmail);
+            materialCard1.Controls.Add(txtTelefono);
+            materialCard1.Controls.Add(txtFicha);
+            materialCard1.Controls.Add(txtNombres);
+            materialCard1.Controls.Add(txtApellidos);
+            materialCard1.Controls.Add(txtDni);
             materialCard1.Depth = 0;
             materialCard1.Dock = DockStyle.Fill;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
@@ -78,8 +78,58 @@
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(357, 509);
+            materialCard1.Size = new Size(357, 539);
             materialCard1.TabIndex = 1;
+            // 
+            // txtPlaza
+            // 
+            txtPlaza.AnimateReadOnly = false;
+            txtPlaza.BackgroundImageLayout = ImageLayout.None;
+            txtPlaza.CharacterCasing = CharacterCasing.Normal;
+            txtPlaza.Depth = 0;
+            txtPlaza.HideSelection = true;
+            txtPlaza.Hint = "Plaza";
+            txtPlaza.Location = new Point(20, 245);
+            txtPlaza.MaxLength = 32767;
+            txtPlaza.MouseState = MaterialSkin.MouseState.OUT;
+            txtPlaza.Name = "txtPlaza";
+            txtPlaza.PasswordChar = '\0';
+            txtPlaza.ReadOnly = true;
+            txtPlaza.ScrollBars = ScrollBars.None;
+            txtPlaza.SelectedText = "";
+            txtPlaza.SelectionLength = 0;
+            txtPlaza.SelectionStart = 0;
+            txtPlaza.ShortcutsEnabled = true;
+            txtPlaza.Size = new Size(320, 67);
+            txtPlaza.TabIndex = 24;
+            txtPlaza.TabStop = false;
+            txtPlaza.TextAlign = HorizontalAlignment.Center;
+            txtPlaza.UseSystemPasswordChar = false;
+            // 
+            // txtDependencia
+            // 
+            txtDependencia.AnimateReadOnly = false;
+            txtDependencia.BackgroundImageLayout = ImageLayout.None;
+            txtDependencia.CharacterCasing = CharacterCasing.Normal;
+            txtDependencia.Depth = 0;
+            txtDependencia.HideSelection = true;
+            txtDependencia.Hint = "Dependencia";
+            txtDependencia.Location = new Point(19, 179);
+            txtDependencia.MaxLength = 32767;
+            txtDependencia.MouseState = MaterialSkin.MouseState.OUT;
+            txtDependencia.Name = "txtDependencia";
+            txtDependencia.PasswordChar = '\0';
+            txtDependencia.ReadOnly = true;
+            txtDependencia.ScrollBars = ScrollBars.None;
+            txtDependencia.SelectedText = "";
+            txtDependencia.SelectionLength = 0;
+            txtDependencia.SelectionStart = 0;
+            txtDependencia.ShortcutsEnabled = true;
+            txtDependencia.Size = new Size(321, 60);
+            txtDependencia.TabIndex = 23;
+            txtDependencia.TabStop = false;
+            txtDependencia.TextAlign = HorizontalAlignment.Center;
+            txtDependencia.UseSystemPasswordChar = false;
             // 
             // materialButton1
             // 
@@ -88,7 +138,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(144, 452);
+            materialButton1.Location = new Point(140, 483);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -99,244 +149,187 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
             // 
-            // materialTextBox28
+            // txtEmail
             // 
-            materialTextBox28.AnimateReadOnly = false;
-            materialTextBox28.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox28.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox28.Depth = 0;
-            materialTextBox28.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox28.HideSelection = true;
-            materialTextBox28.Hint = "Emails";
-            materialTextBox28.LeadingIcon = null;
-            materialTextBox28.Location = new Point(20, 395);
-            materialTextBox28.MaxLength = 32767;
-            materialTextBox28.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox28.Name = "materialTextBox28";
-            materialTextBox28.PasswordChar = '\0';
-            materialTextBox28.PrefixSuffixText = null;
-            materialTextBox28.ReadOnly = true;
-            materialTextBox28.RightToLeft = RightToLeft.No;
-            materialTextBox28.SelectedText = "";
-            materialTextBox28.SelectionLength = 0;
-            materialTextBox28.SelectionStart = 0;
-            materialTextBox28.ShortcutsEnabled = true;
-            materialTextBox28.Size = new Size(320, 48);
-            materialTextBox28.TabIndex = 21;
-            materialTextBox28.TabStop = false;
-            materialTextBox28.TextAlign = HorizontalAlignment.Left;
-            materialTextBox28.TrailingIcon = null;
-            materialTextBox28.UseSystemPasswordChar = false;
+            txtEmail.AnimateReadOnly = false;
+            txtEmail.BackgroundImageLayout = ImageLayout.None;
+            txtEmail.CharacterCasing = CharacterCasing.Normal;
+            txtEmail.Depth = 0;
+            txtEmail.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEmail.HideSelection = true;
+            txtEmail.Hint = "Emails";
+            txtEmail.LeadingIcon = null;
+            txtEmail.Location = new Point(19, 426);
+            txtEmail.MaxLength = 32767;
+            txtEmail.MouseState = MaterialSkin.MouseState.OUT;
+            txtEmail.Name = "txtEmail";
+            txtEmail.PasswordChar = '\0';
+            txtEmail.PrefixSuffixText = null;
+            txtEmail.ReadOnly = true;
+            txtEmail.RightToLeft = RightToLeft.No;
+            txtEmail.SelectedText = "";
+            txtEmail.SelectionLength = 0;
+            txtEmail.SelectionStart = 0;
+            txtEmail.ShortcutsEnabled = true;
+            txtEmail.Size = new Size(320, 48);
+            txtEmail.TabIndex = 21;
+            txtEmail.TabStop = false;
+            txtEmail.TextAlign = HorizontalAlignment.Left;
+            txtEmail.TrailingIcon = null;
+            txtEmail.UseSystemPasswordChar = false;
             // 
-            // materialTextBox27
+            // txtTelefono
             // 
-            materialTextBox27.AnimateReadOnly = false;
-            materialTextBox27.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox27.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox27.Depth = 0;
-            materialTextBox27.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox27.HideSelection = true;
-            materialTextBox27.Hint = "Teléfonos";
-            materialTextBox27.LeadingIcon = null;
-            materialTextBox27.Location = new Point(20, 341);
-            materialTextBox27.MaxLength = 32767;
-            materialTextBox27.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox27.Name = "materialTextBox27";
-            materialTextBox27.PasswordChar = '\0';
-            materialTextBox27.PrefixSuffixText = null;
-            materialTextBox27.ReadOnly = true;
-            materialTextBox27.RightToLeft = RightToLeft.No;
-            materialTextBox27.SelectedText = "";
-            materialTextBox27.SelectionLength = 0;
-            materialTextBox27.SelectionStart = 0;
-            materialTextBox27.ShortcutsEnabled = true;
-            materialTextBox27.Size = new Size(320, 48);
-            materialTextBox27.TabIndex = 20;
-            materialTextBox27.TabStop = false;
-            materialTextBox27.TextAlign = HorizontalAlignment.Left;
-            materialTextBox27.TrailingIcon = null;
-            materialTextBox27.UseSystemPasswordChar = false;
+            txtTelefono.AnimateReadOnly = false;
+            txtTelefono.BackgroundImageLayout = ImageLayout.None;
+            txtTelefono.CharacterCasing = CharacterCasing.Normal;
+            txtTelefono.Depth = 0;
+            txtTelefono.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTelefono.HideSelection = true;
+            txtTelefono.Hint = "Teléfonos";
+            txtTelefono.LeadingIcon = null;
+            txtTelefono.Location = new Point(19, 372);
+            txtTelefono.MaxLength = 32767;
+            txtTelefono.MouseState = MaterialSkin.MouseState.OUT;
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.PasswordChar = '\0';
+            txtTelefono.PrefixSuffixText = null;
+            txtTelefono.ReadOnly = true;
+            txtTelefono.RightToLeft = RightToLeft.No;
+            txtTelefono.SelectedText = "";
+            txtTelefono.SelectionLength = 0;
+            txtTelefono.SelectionStart = 0;
+            txtTelefono.ShortcutsEnabled = true;
+            txtTelefono.Size = new Size(320, 48);
+            txtTelefono.TabIndex = 20;
+            txtTelefono.TabStop = false;
+            txtTelefono.TextAlign = HorizontalAlignment.Left;
+            txtTelefono.TrailingIcon = null;
+            txtTelefono.UseSystemPasswordChar = false;
             // 
-            // materialTextBox22
+            // txtFicha
             // 
-            materialTextBox22.AnimateReadOnly = false;
-            materialTextBox22.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox22.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox22.Depth = 0;
-            materialTextBox22.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox22.HideSelection = true;
-            materialTextBox22.Hint = "Ficha";
-            materialTextBox22.LeadingIcon = null;
-            materialTextBox22.Location = new Point(18, 287);
-            materialTextBox22.MaxLength = 32767;
-            materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox22.Name = "materialTextBox22";
-            materialTextBox22.PasswordChar = '\0';
-            materialTextBox22.PrefixSuffixText = null;
-            materialTextBox22.ReadOnly = true;
-            materialTextBox22.RightToLeft = RightToLeft.No;
-            materialTextBox22.SelectedText = "";
-            materialTextBox22.SelectionLength = 0;
-            materialTextBox22.SelectionStart = 0;
-            materialTextBox22.ShortcutsEnabled = true;
-            materialTextBox22.Size = new Size(320, 48);
-            materialTextBox22.TabIndex = 19;
-            materialTextBox22.TabStop = false;
-            materialTextBox22.TextAlign = HorizontalAlignment.Left;
-            materialTextBox22.TrailingIcon = null;
-            materialTextBox22.UseSystemPasswordChar = false;
+            txtFicha.AnimateReadOnly = false;
+            txtFicha.BackgroundImageLayout = ImageLayout.None;
+            txtFicha.CharacterCasing = CharacterCasing.Normal;
+            txtFicha.Depth = 0;
+            txtFicha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtFicha.HideSelection = true;
+            txtFicha.Hint = "Ficha";
+            txtFicha.LeadingIcon = null;
+            txtFicha.Location = new Point(20, 318);
+            txtFicha.MaxLength = 32767;
+            txtFicha.MouseState = MaterialSkin.MouseState.OUT;
+            txtFicha.Name = "txtFicha";
+            txtFicha.PasswordChar = '\0';
+            txtFicha.PrefixSuffixText = null;
+            txtFicha.ReadOnly = true;
+            txtFicha.RightToLeft = RightToLeft.No;
+            txtFicha.SelectedText = "";
+            txtFicha.SelectionLength = 0;
+            txtFicha.SelectionStart = 0;
+            txtFicha.ShortcutsEnabled = true;
+            txtFicha.Size = new Size(320, 48);
+            txtFicha.TabIndex = 19;
+            txtFicha.TabStop = false;
+            txtFicha.TextAlign = HorizontalAlignment.Left;
+            txtFicha.TrailingIcon = null;
+            txtFicha.UseSystemPasswordChar = false;
             // 
-            // materialTextBox26
+            // txtNombres
             // 
-            materialTextBox26.AnimateReadOnly = false;
-            materialTextBox26.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox26.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox26.Depth = 0;
-            materialTextBox26.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox26.HideSelection = true;
-            materialTextBox26.Hint = "Plaza";
-            materialTextBox26.LeadingIcon = null;
-            materialTextBox26.Location = new Point(18, 233);
-            materialTextBox26.MaxLength = 32767;
-            materialTextBox26.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox26.Name = "materialTextBox26";
-            materialTextBox26.PasswordChar = '\0';
-            materialTextBox26.PrefixSuffixText = null;
-            materialTextBox26.ReadOnly = true;
-            materialTextBox26.RightToLeft = RightToLeft.No;
-            materialTextBox26.SelectedText = "";
-            materialTextBox26.SelectionLength = 0;
-            materialTextBox26.SelectionStart = 0;
-            materialTextBox26.ShortcutsEnabled = true;
-            materialTextBox26.Size = new Size(320, 48);
-            materialTextBox26.TabIndex = 18;
-            materialTextBox26.TabStop = false;
-            materialTextBox26.TextAlign = HorizontalAlignment.Left;
-            materialTextBox26.TrailingIcon = null;
-            materialTextBox26.UseSystemPasswordChar = false;
+            txtNombres.AnimateReadOnly = false;
+            txtNombres.BackgroundImageLayout = ImageLayout.None;
+            txtNombres.CharacterCasing = CharacterCasing.Normal;
+            txtNombres.Depth = 0;
+            txtNombres.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNombres.HideSelection = true;
+            txtNombres.Hint = "Nombres";
+            txtNombres.LeadingIcon = null;
+            txtNombres.Location = new Point(18, 125);
+            txtNombres.MaxLength = 32767;
+            txtNombres.MouseState = MaterialSkin.MouseState.OUT;
+            txtNombres.Name = "txtNombres";
+            txtNombres.PasswordChar = '\0';
+            txtNombres.PrefixSuffixText = null;
+            txtNombres.ReadOnly = true;
+            txtNombres.RightToLeft = RightToLeft.No;
+            txtNombres.SelectedText = "";
+            txtNombres.SelectionLength = 0;
+            txtNombres.SelectionStart = 0;
+            txtNombres.ShortcutsEnabled = true;
+            txtNombres.Size = new Size(320, 48);
+            txtNombres.TabIndex = 7;
+            txtNombres.TabStop = false;
+            txtNombres.TextAlign = HorizontalAlignment.Left;
+            txtNombres.TrailingIcon = null;
+            txtNombres.UseSystemPasswordChar = false;
             // 
-            // materialTextBox25
+            // txtApellidos
             // 
-            materialTextBox25.AnimateReadOnly = false;
-            materialTextBox25.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox25.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox25.Depth = 0;
-            materialTextBox25.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox25.HideSelection = true;
-            materialTextBox25.Hint = "Dependencia";
-            materialTextBox25.LeadingIcon = null;
-            materialTextBox25.Location = new Point(18, 179);
-            materialTextBox25.MaxLength = 32767;
-            materialTextBox25.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox25.Name = "materialTextBox25";
-            materialTextBox25.PasswordChar = '\0';
-            materialTextBox25.PrefixSuffixText = null;
-            materialTextBox25.ReadOnly = true;
-            materialTextBox25.RightToLeft = RightToLeft.No;
-            materialTextBox25.SelectedText = "";
-            materialTextBox25.SelectionLength = 0;
-            materialTextBox25.SelectionStart = 0;
-            materialTextBox25.ShortcutsEnabled = true;
-            materialTextBox25.Size = new Size(320, 48);
-            materialTextBox25.TabIndex = 8;
-            materialTextBox25.TabStop = false;
-            materialTextBox25.TextAlign = HorizontalAlignment.Left;
-            materialTextBox25.TrailingIcon = null;
-            materialTextBox25.UseSystemPasswordChar = false;
+            txtApellidos.AnimateReadOnly = false;
+            txtApellidos.BackgroundImageLayout = ImageLayout.None;
+            txtApellidos.CharacterCasing = CharacterCasing.Normal;
+            txtApellidos.Depth = 0;
+            txtApellidos.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtApellidos.HideSelection = true;
+            txtApellidos.Hint = "Apellidos";
+            txtApellidos.LeadingIcon = null;
+            txtApellidos.Location = new Point(17, 71);
+            txtApellidos.MaxLength = 32767;
+            txtApellidos.MouseState = MaterialSkin.MouseState.OUT;
+            txtApellidos.Name = "txtApellidos";
+            txtApellidos.PasswordChar = '\0';
+            txtApellidos.PrefixSuffixText = null;
+            txtApellidos.ReadOnly = true;
+            txtApellidos.RightToLeft = RightToLeft.No;
+            txtApellidos.SelectedText = "";
+            txtApellidos.SelectionLength = 0;
+            txtApellidos.SelectionStart = 0;
+            txtApellidos.ShortcutsEnabled = true;
+            txtApellidos.Size = new Size(321, 48);
+            txtApellidos.TabIndex = 6;
+            txtApellidos.TabStop = false;
+            txtApellidos.TextAlign = HorizontalAlignment.Left;
+            txtApellidos.TrailingIcon = null;
+            txtApellidos.UseSystemPasswordChar = false;
             // 
-            // materialTextBox24
+            // txtDni
             // 
-            materialTextBox24.AnimateReadOnly = false;
-            materialTextBox24.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox24.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox24.Depth = 0;
-            materialTextBox24.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox24.HideSelection = true;
-            materialTextBox24.Hint = "Nombres";
-            materialTextBox24.LeadingIcon = null;
-            materialTextBox24.Location = new Point(18, 125);
-            materialTextBox24.MaxLength = 32767;
-            materialTextBox24.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox24.Name = "materialTextBox24";
-            materialTextBox24.PasswordChar = '\0';
-            materialTextBox24.PrefixSuffixText = null;
-            materialTextBox24.ReadOnly = true;
-            materialTextBox24.RightToLeft = RightToLeft.No;
-            materialTextBox24.SelectedText = "";
-            materialTextBox24.SelectionLength = 0;
-            materialTextBox24.SelectionStart = 0;
-            materialTextBox24.ShortcutsEnabled = true;
-            materialTextBox24.Size = new Size(320, 48);
-            materialTextBox24.TabIndex = 7;
-            materialTextBox24.TabStop = false;
-            materialTextBox24.TextAlign = HorizontalAlignment.Left;
-            materialTextBox24.TrailingIcon = null;
-            materialTextBox24.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox23
-            // 
-            materialTextBox23.AnimateReadOnly = false;
-            materialTextBox23.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox23.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox23.Depth = 0;
-            materialTextBox23.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox23.HideSelection = true;
-            materialTextBox23.Hint = "Apellidos";
-            materialTextBox23.LeadingIcon = null;
-            materialTextBox23.Location = new Point(17, 71);
-            materialTextBox23.MaxLength = 32767;
-            materialTextBox23.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox23.Name = "materialTextBox23";
-            materialTextBox23.PasswordChar = '\0';
-            materialTextBox23.PrefixSuffixText = null;
-            materialTextBox23.ReadOnly = true;
-            materialTextBox23.RightToLeft = RightToLeft.No;
-            materialTextBox23.SelectedText = "";
-            materialTextBox23.SelectionLength = 0;
-            materialTextBox23.SelectionStart = 0;
-            materialTextBox23.ShortcutsEnabled = true;
-            materialTextBox23.Size = new Size(321, 48);
-            materialTextBox23.TabIndex = 6;
-            materialTextBox23.TabStop = false;
-            materialTextBox23.TextAlign = HorizontalAlignment.Left;
-            materialTextBox23.TrailingIcon = null;
-            materialTextBox23.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox21
-            // 
-            materialTextBox21.AnimateReadOnly = false;
-            materialTextBox21.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox21.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox21.Depth = 0;
-            materialTextBox21.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox21.HideSelection = true;
-            materialTextBox21.Hint = "DNI";
-            materialTextBox21.LeadingIcon = null;
-            materialTextBox21.Location = new Point(17, 17);
-            materialTextBox21.MaxLength = 32767;
-            materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox21.Name = "materialTextBox21";
-            materialTextBox21.PasswordChar = '\0';
-            materialTextBox21.PrefixSuffixText = null;
-            materialTextBox21.ReadOnly = true;
-            materialTextBox21.RightToLeft = RightToLeft.No;
-            materialTextBox21.SelectedText = "";
-            materialTextBox21.SelectionLength = 0;
-            materialTextBox21.SelectionStart = 0;
-            materialTextBox21.ShortcutsEnabled = true;
-            materialTextBox21.Size = new Size(321, 48);
-            materialTextBox21.TabIndex = 5;
-            materialTextBox21.TabStop = false;
-            materialTextBox21.TextAlign = HorizontalAlignment.Left;
-            materialTextBox21.TrailingIcon = null;
-            materialTextBox21.UseSystemPasswordChar = false;
+            txtDni.AnimateReadOnly = false;
+            txtDni.BackgroundImageLayout = ImageLayout.None;
+            txtDni.CharacterCasing = CharacterCasing.Normal;
+            txtDni.Depth = 0;
+            txtDni.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtDni.HideSelection = true;
+            txtDni.Hint = "DNI";
+            txtDni.LeadingIcon = null;
+            txtDni.Location = new Point(17, 17);
+            txtDni.MaxLength = 32767;
+            txtDni.MouseState = MaterialSkin.MouseState.OUT;
+            txtDni.Name = "txtDni";
+            txtDni.PasswordChar = '\0';
+            txtDni.PrefixSuffixText = null;
+            txtDni.ReadOnly = true;
+            txtDni.RightToLeft = RightToLeft.No;
+            txtDni.SelectedText = "";
+            txtDni.SelectionLength = 0;
+            txtDni.SelectionStart = 0;
+            txtDni.ShortcutsEnabled = true;
+            txtDni.Size = new Size(321, 48);
+            txtDni.TabIndex = 5;
+            txtDni.TabStop = false;
+            txtDni.TextAlign = HorizontalAlignment.Left;
+            txtDni.TrailingIcon = null;
+            txtDni.UseSystemPasswordChar = false;
             // 
             // frmInformacionPostulante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(391, 604);
+            ClientSize = new Size(391, 634);
             Controls.Add(tableLayoutPanel1);
             Name = "frmInformacionPostulante";
             Text = "DETALLE DE POSTULANTE";
@@ -350,14 +343,14 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox26;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox25;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox24;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox23;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox22;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox27;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox28;
+        private MaterialSkin.Controls.MaterialTextBox2 txtNombres;
+        private MaterialSkin.Controls.MaterialTextBox2 txtApellidos;
+        private MaterialSkin.Controls.MaterialTextBox2 txtDni;
+        private MaterialSkin.Controls.MaterialTextBox2 txtFicha;
+        private MaterialSkin.Controls.MaterialTextBox2 txtTelefono;
+        private MaterialSkin.Controls.MaterialTextBox2 txtEmail;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtPlaza;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDependencia;
     }
 }

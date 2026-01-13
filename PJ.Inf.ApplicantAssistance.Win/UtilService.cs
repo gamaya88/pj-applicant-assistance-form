@@ -20,5 +20,20 @@ namespace PJ.Inf.ApplicantAssistance.Win
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Red800, Primary.Red900, Primary.Red300, Accent.Red700, TextShade.WHITE);
         }
+
+        public static void Configurar(this DataGridView dataGridView)
+        {
+            dataGridView.AllowUserToResizeRows = false;
+            dataGridView.AllowUserToResizeColumns = false;
+            dataGridView.AllowUserToOrderColumns = true;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AllowUserToAddRows = false;
+            //dataGridView.AllowDrop = false;
+            dataGridView.AutoGenerateColumns = false;
+            dataGridView.MultiSelect = false;
+            dataGridView.ReadOnly = true;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
     }
 }

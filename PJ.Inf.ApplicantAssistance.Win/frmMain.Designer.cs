@@ -30,16 +30,16 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            materialTextBox26 = new MaterialSkin.Controls.MaterialTextBox2();
-            label3 = new Label();
-            label2 = new Label();
+            txtPlaza = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            txtDependencia2 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            lblNoAsistentes = new Label();
+            lblAsistentes = new Label();
             label1 = new Label();
             materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            materialTextBox25 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox24 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox23 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
+            txtNombres = new MaterialSkin.Controls.MaterialTextBox2();
+            txtApellidos = new MaterialSkin.Controls.MaterialTextBox2();
+            txtDni = new MaterialSkin.Controls.MaterialTextBox2();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -47,18 +47,19 @@
             materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             txtDniBuscado = new MaterialSkin.Controls.MaterialTextBox2();
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            dataGridView1 = new DataGridView();
+            dgvBusqueda = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
+            txtBusqueda = new MaterialSkin.Controls.MaterialTextBox2();
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             tableLayoutPanel1.SuspendLayout();
             materialCard1.SuspendLayout();
             materialCard2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBusqueda).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -74,22 +75,22 @@
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1279, 602);
+            tableLayoutPanel1.Size = new Size(1279, 611);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Controls.Add(materialTextBox26);
-            materialCard1.Controls.Add(label3);
-            materialCard1.Controls.Add(label2);
+            materialCard1.Controls.Add(txtPlaza);
+            materialCard1.Controls.Add(txtDependencia2);
+            materialCard1.Controls.Add(lblNoAsistentes);
+            materialCard1.Controls.Add(lblAsistentes);
             materialCard1.Controls.Add(label1);
             materialCard1.Controls.Add(materialLabel10);
             materialCard1.Controls.Add(materialLabel7);
-            materialCard1.Controls.Add(materialTextBox25);
-            materialCard1.Controls.Add(materialTextBox24);
-            materialCard1.Controls.Add(materialTextBox23);
-            materialCard1.Controls.Add(materialTextBox21);
+            materialCard1.Controls.Add(txtNombres);
+            materialCard1.Controls.Add(txtApellidos);
+            materialCard1.Controls.Add(txtDni);
             materialCard1.Controls.Add(materialLabel5);
             materialCard1.Controls.Add(materialLabel4);
             materialCard1.Controls.Add(materialLabel3);
@@ -104,57 +105,78 @@
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(355, 574);
+            materialCard1.Size = new Size(355, 583);
             materialCard1.TabIndex = 0;
             // 
-            // materialTextBox26
+            // txtPlaza
             // 
-            materialTextBox26.AnimateReadOnly = false;
-            materialTextBox26.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox26.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox26.Depth = 0;
-            materialTextBox26.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox26.HideSelection = true;
-            materialTextBox26.Hint = "Plaza";
-            materialTextBox26.LeadingIcon = null;
-            materialTextBox26.Location = new Point(18, 408);
-            materialTextBox26.MaxLength = 32767;
-            materialTextBox26.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox26.Name = "materialTextBox26";
-            materialTextBox26.PasswordChar = '\0';
-            materialTextBox26.PrefixSuffixText = null;
-            materialTextBox26.ReadOnly = true;
-            materialTextBox26.RightToLeft = RightToLeft.No;
-            materialTextBox26.SelectedText = "";
-            materialTextBox26.SelectionLength = 0;
-            materialTextBox26.SelectionStart = 0;
-            materialTextBox26.ShortcutsEnabled = true;
-            materialTextBox26.Size = new Size(320, 48);
-            materialTextBox26.TabIndex = 18;
-            materialTextBox26.TabStop = false;
-            materialTextBox26.TextAlign = HorizontalAlignment.Left;
-            materialTextBox26.TrailingIcon = null;
-            materialTextBox26.UseSystemPasswordChar = false;
+            txtPlaza.AnimateReadOnly = false;
+            txtPlaza.BackgroundImageLayout = ImageLayout.None;
+            txtPlaza.CharacterCasing = CharacterCasing.Normal;
+            txtPlaza.Depth = 0;
+            txtPlaza.HideSelection = true;
+            txtPlaza.Hint = "Plaza";
+            txtPlaza.Location = new Point(18, 420);
+            txtPlaza.MaxLength = 32767;
+            txtPlaza.MouseState = MaterialSkin.MouseState.OUT;
+            txtPlaza.Name = "txtPlaza";
+            txtPlaza.PasswordChar = '\0';
+            txtPlaza.ReadOnly = false;
+            txtPlaza.ScrollBars = ScrollBars.None;
+            txtPlaza.SelectedText = "";
+            txtPlaza.SelectionLength = 0;
+            txtPlaza.SelectionStart = 0;
+            txtPlaza.ShortcutsEnabled = true;
+            txtPlaza.Size = new Size(320, 67);
+            txtPlaza.TabIndex = 20;
+            txtPlaza.TabStop = false;
+            txtPlaza.TextAlign = HorizontalAlignment.Center;
+            txtPlaza.UseSystemPasswordChar = false;
             // 
-            // label3
+            // txtDependencia2
             // 
-            label3.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(226, 517);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 37);
-            label3.TabIndex = 17;
-            label3.Text = "375";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            txtDependencia2.AnimateReadOnly = false;
+            txtDependencia2.BackgroundImageLayout = ImageLayout.None;
+            txtDependencia2.CharacterCasing = CharacterCasing.Normal;
+            txtDependencia2.Depth = 0;
+            txtDependencia2.HideSelection = true;
+            txtDependencia2.Hint = "Dependencia";
+            txtDependencia2.Location = new Point(17, 354);
+            txtDependencia2.MaxLength = 32767;
+            txtDependencia2.MouseState = MaterialSkin.MouseState.OUT;
+            txtDependencia2.Name = "txtDependencia2";
+            txtDependencia2.PasswordChar = '\0';
+            txtDependencia2.ReadOnly = true;
+            txtDependencia2.ScrollBars = ScrollBars.None;
+            txtDependencia2.SelectedText = "";
+            txtDependencia2.SelectionLength = 0;
+            txtDependencia2.SelectionStart = 0;
+            txtDependencia2.ShortcutsEnabled = true;
+            txtDependencia2.Size = new Size(321, 60);
+            txtDependencia2.TabIndex = 19;
+            txtDependencia2.TabStop = false;
+            txtDependencia2.TextAlign = HorizontalAlignment.Center;
+            txtDependencia2.UseSystemPasswordChar = false;
             // 
-            // label2
+            // lblNoAsistentes
             // 
-            label2.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(94, 520);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 37);
-            label2.TabIndex = 16;
-            label2.Text = "125";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            lblNoAsistentes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNoAsistentes.Location = new Point(257, 529);
+            lblNoAsistentes.Name = "lblNoAsistentes";
+            lblNoAsistentes.Size = new Size(53, 37);
+            lblNoAsistentes.TabIndex = 17;
+            lblNoAsistentes.Text = "####";
+            lblNoAsistentes.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblAsistentes
+            // 
+            lblAsistentes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAsistentes.Location = new Point(115, 529);
+            lblAsistentes.Name = "lblAsistentes";
+            lblAsistentes.Size = new Size(62, 37);
+            lblAsistentes.TabIndex = 16;
+            lblAsistentes.Text = "####";
+            lblAsistentes.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -170,7 +192,7 @@
             // 
             materialLabel10.Depth = 0;
             materialLabel10.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel10.Location = new Point(149, 528);
+            materialLabel10.Location = new Point(180, 538);
             materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel10.Name = "materialLabel10";
             materialLabel10.Size = new Size(10, 23);
@@ -181,128 +203,99 @@
             // 
             materialLabel7.Depth = 0;
             materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel7.Location = new Point(165, 528);
+            materialLabel7.Location = new Point(196, 538);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
             materialLabel7.Size = new Size(55, 23);
             materialLabel7.TabIndex = 11;
             materialLabel7.Text = "Faltan:";
             // 
-            // materialTextBox25
+            // txtNombres
             // 
-            materialTextBox25.AnimateReadOnly = false;
-            materialTextBox25.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox25.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox25.Depth = 0;
-            materialTextBox25.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox25.HideSelection = true;
-            materialTextBox25.Hint = "Dependencia";
-            materialTextBox25.LeadingIcon = null;
-            materialTextBox25.Location = new Point(18, 354);
-            materialTextBox25.MaxLength = 32767;
-            materialTextBox25.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox25.Name = "materialTextBox25";
-            materialTextBox25.PasswordChar = '\0';
-            materialTextBox25.PrefixSuffixText = null;
-            materialTextBox25.ReadOnly = true;
-            materialTextBox25.RightToLeft = RightToLeft.No;
-            materialTextBox25.SelectedText = "";
-            materialTextBox25.SelectionLength = 0;
-            materialTextBox25.SelectionStart = 0;
-            materialTextBox25.ShortcutsEnabled = true;
-            materialTextBox25.Size = new Size(320, 48);
-            materialTextBox25.TabIndex = 8;
-            materialTextBox25.TabStop = false;
-            materialTextBox25.TextAlign = HorizontalAlignment.Left;
-            materialTextBox25.TrailingIcon = null;
-            materialTextBox25.UseSystemPasswordChar = false;
+            txtNombres.AnimateReadOnly = false;
+            txtNombres.BackgroundImageLayout = ImageLayout.None;
+            txtNombres.CharacterCasing = CharacterCasing.Normal;
+            txtNombres.Depth = 0;
+            txtNombres.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNombres.HideSelection = true;
+            txtNombres.Hint = "Nombres";
+            txtNombres.LeadingIcon = null;
+            txtNombres.Location = new Point(18, 300);
+            txtNombres.MaxLength = 32767;
+            txtNombres.MouseState = MaterialSkin.MouseState.OUT;
+            txtNombres.Name = "txtNombres";
+            txtNombres.PasswordChar = '\0';
+            txtNombres.PrefixSuffixText = null;
+            txtNombres.ReadOnly = true;
+            txtNombres.RightToLeft = RightToLeft.No;
+            txtNombres.SelectedText = "";
+            txtNombres.SelectionLength = 0;
+            txtNombres.SelectionStart = 0;
+            txtNombres.ShortcutsEnabled = true;
+            txtNombres.Size = new Size(320, 48);
+            txtNombres.TabIndex = 7;
+            txtNombres.TabStop = false;
+            txtNombres.TextAlign = HorizontalAlignment.Center;
+            txtNombres.TrailingIcon = null;
+            txtNombres.UseSystemPasswordChar = false;
             // 
-            // materialTextBox24
+            // txtApellidos
             // 
-            materialTextBox24.AnimateReadOnly = false;
-            materialTextBox24.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox24.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox24.Depth = 0;
-            materialTextBox24.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox24.HideSelection = true;
-            materialTextBox24.Hint = "Nombres";
-            materialTextBox24.LeadingIcon = null;
-            materialTextBox24.Location = new Point(18, 300);
-            materialTextBox24.MaxLength = 32767;
-            materialTextBox24.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox24.Name = "materialTextBox24";
-            materialTextBox24.PasswordChar = '\0';
-            materialTextBox24.PrefixSuffixText = null;
-            materialTextBox24.ReadOnly = true;
-            materialTextBox24.RightToLeft = RightToLeft.No;
-            materialTextBox24.SelectedText = "";
-            materialTextBox24.SelectionLength = 0;
-            materialTextBox24.SelectionStart = 0;
-            materialTextBox24.ShortcutsEnabled = true;
-            materialTextBox24.Size = new Size(320, 48);
-            materialTextBox24.TabIndex = 7;
-            materialTextBox24.TabStop = false;
-            materialTextBox24.TextAlign = HorizontalAlignment.Left;
-            materialTextBox24.TrailingIcon = null;
-            materialTextBox24.UseSystemPasswordChar = false;
+            txtApellidos.AnimateReadOnly = false;
+            txtApellidos.BackgroundImageLayout = ImageLayout.None;
+            txtApellidos.CharacterCasing = CharacterCasing.Normal;
+            txtApellidos.Depth = 0;
+            txtApellidos.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtApellidos.HideSelection = true;
+            txtApellidos.Hint = "Apellidos";
+            txtApellidos.LeadingIcon = null;
+            txtApellidos.Location = new Point(17, 246);
+            txtApellidos.MaxLength = 32767;
+            txtApellidos.MouseState = MaterialSkin.MouseState.OUT;
+            txtApellidos.Name = "txtApellidos";
+            txtApellidos.PasswordChar = '\0';
+            txtApellidos.PrefixSuffixText = null;
+            txtApellidos.ReadOnly = true;
+            txtApellidos.RightToLeft = RightToLeft.No;
+            txtApellidos.SelectedText = "";
+            txtApellidos.SelectionLength = 0;
+            txtApellidos.SelectionStart = 0;
+            txtApellidos.ShortcutsEnabled = true;
+            txtApellidos.Size = new Size(321, 48);
+            txtApellidos.TabIndex = 6;
+            txtApellidos.TabStop = false;
+            txtApellidos.TextAlign = HorizontalAlignment.Center;
+            txtApellidos.TrailingIcon = null;
+            txtApellidos.UseSystemPasswordChar = false;
             // 
-            // materialTextBox23
+            // txtDni
             // 
-            materialTextBox23.AnimateReadOnly = false;
-            materialTextBox23.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox23.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox23.Depth = 0;
-            materialTextBox23.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox23.HideSelection = true;
-            materialTextBox23.Hint = "Apellidos";
-            materialTextBox23.LeadingIcon = null;
-            materialTextBox23.Location = new Point(17, 246);
-            materialTextBox23.MaxLength = 32767;
-            materialTextBox23.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox23.Name = "materialTextBox23";
-            materialTextBox23.PasswordChar = '\0';
-            materialTextBox23.PrefixSuffixText = null;
-            materialTextBox23.ReadOnly = true;
-            materialTextBox23.RightToLeft = RightToLeft.No;
-            materialTextBox23.SelectedText = "";
-            materialTextBox23.SelectionLength = 0;
-            materialTextBox23.SelectionStart = 0;
-            materialTextBox23.ShortcutsEnabled = true;
-            materialTextBox23.Size = new Size(321, 48);
-            materialTextBox23.TabIndex = 6;
-            materialTextBox23.TabStop = false;
-            materialTextBox23.TextAlign = HorizontalAlignment.Left;
-            materialTextBox23.TrailingIcon = null;
-            materialTextBox23.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox21
-            // 
-            materialTextBox21.AnimateReadOnly = false;
-            materialTextBox21.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox21.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox21.Depth = 0;
-            materialTextBox21.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox21.HideSelection = true;
-            materialTextBox21.Hint = "DNI";
-            materialTextBox21.LeadingIcon = null;
-            materialTextBox21.Location = new Point(17, 192);
-            materialTextBox21.MaxLength = 32767;
-            materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox21.Name = "materialTextBox21";
-            materialTextBox21.PasswordChar = '\0';
-            materialTextBox21.PrefixSuffixText = null;
-            materialTextBox21.ReadOnly = true;
-            materialTextBox21.RightToLeft = RightToLeft.No;
-            materialTextBox21.SelectedText = "";
-            materialTextBox21.SelectionLength = 0;
-            materialTextBox21.SelectionStart = 0;
-            materialTextBox21.ShortcutsEnabled = true;
-            materialTextBox21.Size = new Size(321, 48);
-            materialTextBox21.TabIndex = 5;
-            materialTextBox21.TabStop = false;
-            materialTextBox21.TextAlign = HorizontalAlignment.Left;
-            materialTextBox21.TrailingIcon = null;
-            materialTextBox21.UseSystemPasswordChar = false;
+            txtDni.AnimateReadOnly = false;
+            txtDni.BackgroundImageLayout = ImageLayout.None;
+            txtDni.CharacterCasing = CharacterCasing.Normal;
+            txtDni.Depth = 0;
+            txtDni.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtDni.HideSelection = true;
+            txtDni.Hint = "DNI";
+            txtDni.LeadingIcon = null;
+            txtDni.Location = new Point(17, 192);
+            txtDni.MaxLength = 32767;
+            txtDni.MouseState = MaterialSkin.MouseState.OUT;
+            txtDni.Name = "txtDni";
+            txtDni.PasswordChar = '\0';
+            txtDni.PrefixSuffixText = null;
+            txtDni.ReadOnly = true;
+            txtDni.RightToLeft = RightToLeft.No;
+            txtDni.SelectedText = "";
+            txtDni.SelectionLength = 0;
+            txtDni.SelectionStart = 0;
+            txtDni.ShortcutsEnabled = true;
+            txtDni.Size = new Size(321, 48);
+            txtDni.TabIndex = 5;
+            txtDni.TabStop = false;
+            txtDni.TextAlign = HorizontalAlignment.Center;
+            txtDni.TrailingIcon = null;
+            txtDni.UseSystemPasswordChar = false;
             // 
             // materialLabel5
             // 
@@ -321,7 +314,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(30, 498);
+            materialLabel4.Location = new Point(53, 508);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(78, 19);
@@ -344,7 +337,7 @@
             // 
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(18, 528);
+            materialLabel2.Location = new Point(41, 538);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(114, 23);
@@ -395,8 +388,8 @@
             // materialCard2
             // 
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard2.Controls.Add(dataGridView1);
-            materialCard2.Controls.Add(materialTextBox22);
+            materialCard2.Controls.Add(dgvBusqueda);
+            materialCard2.Controls.Add(txtBusqueda);
             materialCard2.Controls.Add(materialLabel6);
             materialCard2.Depth = 0;
             materialCard2.Dock = DockStyle.Fill;
@@ -406,74 +399,90 @@
             materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard2.Name = "materialCard2";
             materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(868, 574);
+            materialCard2.Size = new Size(868, 583);
             materialCard2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvBusqueda
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column5, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(17, 71);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(834, 480);
-            dataGridView1.TabIndex = 2;
+            dgvBusqueda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBusqueda.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, Column5, Column2, Column3, Column4 });
+            dgvBusqueda.Location = new Point(17, 71);
+            dgvBusqueda.Name = "dgvBusqueda";
+            dgvBusqueda.Size = new Size(834, 480);
+            dgvBusqueda.TabIndex = 2;
+            dgvBusqueda.CellDoubleClick += dgvBusqueda_CellDoubleClick;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ParId";
+            ID.HeaderText = "Column6";
+            ID.Name = "ID";
+            ID.Visible = false;
             // 
             // Column1
             // 
+            Column1.DataPropertyName = "ParDocumentoIdentidad";
             Column1.HeaderText = "DNI";
             Column1.Name = "Column1";
+            Column1.Width = 80;
             // 
             // Column5
             // 
+            Column5.DataPropertyName = "ParFechaIngreso";
             Column5.HeaderText = "HORA INGRESO";
             Column5.Name = "Column5";
+            Column5.Width = 180;
             // 
             // Column2
             // 
+            Column2.DataPropertyName = "ParNombres";
             Column2.HeaderText = "NOMBRES";
             Column2.Name = "Column2";
             Column2.Width = 300;
             // 
             // Column3
             // 
+            Column3.DataPropertyName = "ParDependencia";
             Column3.HeaderText = "DEPENDENCIA";
             Column3.Name = "Column3";
-            Column3.Width = 200;
+            Column3.Width = 300;
             // 
             // Column4
             // 
+            Column4.DataPropertyName = "ParPlaza";
             Column4.HeaderText = "PLAZA";
             Column4.Name = "Column4";
-            Column4.Width = 200;
+            Column4.Width = 300;
             // 
-            // materialTextBox22
+            // txtBusqueda
             // 
-            materialTextBox22.AnimateReadOnly = false;
-            materialTextBox22.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox22.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox22.Depth = 0;
-            materialTextBox22.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox22.HideSelection = true;
-            materialTextBox22.Hint = "Buscar:";
-            materialTextBox22.LeadingIcon = null;
-            materialTextBox22.Location = new Point(180, 17);
-            materialTextBox22.MaxLength = 32767;
-            materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox22.Name = "materialTextBox22";
-            materialTextBox22.PasswordChar = '\0';
-            materialTextBox22.PrefixSuffixText = null;
-            materialTextBox22.ReadOnly = false;
-            materialTextBox22.RightToLeft = RightToLeft.No;
-            materialTextBox22.SelectedText = "";
-            materialTextBox22.SelectionLength = 0;
-            materialTextBox22.SelectionStart = 0;
-            materialTextBox22.ShortcutsEnabled = true;
-            materialTextBox22.Size = new Size(671, 48);
-            materialTextBox22.TabIndex = 1;
-            materialTextBox22.TabStop = false;
-            materialTextBox22.TextAlign = HorizontalAlignment.Left;
-            materialTextBox22.TrailingIcon = null;
-            materialTextBox22.UseSystemPasswordChar = false;
+            txtBusqueda.AnimateReadOnly = false;
+            txtBusqueda.BackgroundImageLayout = ImageLayout.None;
+            txtBusqueda.CharacterCasing = CharacterCasing.Normal;
+            txtBusqueda.Depth = 0;
+            txtBusqueda.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtBusqueda.HideSelection = true;
+            txtBusqueda.Hint = "Buscar:";
+            txtBusqueda.LeadingIcon = null;
+            txtBusqueda.Location = new Point(180, 17);
+            txtBusqueda.MaxLength = 32767;
+            txtBusqueda.MouseState = MaterialSkin.MouseState.OUT;
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.PasswordChar = '\0';
+            txtBusqueda.PrefixSuffixText = null;
+            txtBusqueda.ReadOnly = false;
+            txtBusqueda.RightToLeft = RightToLeft.No;
+            txtBusqueda.SelectedText = "";
+            txtBusqueda.SelectionLength = 0;
+            txtBusqueda.SelectionStart = 0;
+            txtBusqueda.ShortcutsEnabled = true;
+            txtBusqueda.Size = new Size(671, 48);
+            txtBusqueda.TabIndex = 1;
+            txtBusqueda.TabStop = false;
+            txtBusqueda.TextAlign = HorizontalAlignment.Left;
+            txtBusqueda.TrailingIcon = null;
+            txtBusqueda.UseSystemPasswordChar = false;
+            txtBusqueda.KeyDown += txtBusqueda_KeyDown;
             // 
             // materialLabel6
             // 
@@ -491,16 +500,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1285, 669);
+            ClientSize = new Size(1285, 678);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
             Text = "ASISTENCIA DE POSTULANTES - 2026";
+            Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
             materialCard2.ResumeLayout(false);
             materialCard2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBusqueda).EndInit();
             ResumeLayout(false);
         }
 
@@ -515,19 +525,21 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialCard materialCard2;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox22;
+        private MaterialSkin.Controls.MaterialTextBox2 txtBusqueda;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private DataGridView dataGridView1;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox24;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox23;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox25;
+        private DataGridView dgvBusqueda;
+        private MaterialSkin.Controls.MaterialTextBox2 txtDni;
+        private MaterialSkin.Controls.MaterialTextBox2 txtNombres;
+        private MaterialSkin.Controls.MaterialTextBox2 txtApellidos;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private Label label1;
-        private Label label3;
-        private Label label2;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox26;
+        private Label lblNoAsistentes;
+        private Label lblAsistentes;
+        private MaterialSkin.Controls.MaterialTextBox2 materialMultiLineTextBox21;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDependencia2;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtPlaza;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column2;
