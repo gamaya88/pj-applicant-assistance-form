@@ -30,15 +30,15 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            materialTextBox28 = new MaterialSkin.Controls.MaterialTextBox2();
+            materialTextBox27 = new MaterialSkin.Controls.MaterialTextBox2();
             materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
             materialTextBox26 = new MaterialSkin.Controls.MaterialTextBox2();
             materialTextBox25 = new MaterialSkin.Controls.MaterialTextBox2();
             materialTextBox24 = new MaterialSkin.Controls.MaterialTextBox2();
             materialTextBox23 = new MaterialSkin.Controls.MaterialTextBox2();
             materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox27 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialTextBox28 = new MaterialSkin.Controls.MaterialTextBox2();
-            materialButton1 = new MaterialSkin.Controls.MaterialButton();
             tableLayoutPanel1.SuspendLayout();
             materialCard1.SuspendLayout();
             SuspendLayout();
@@ -55,7 +55,7 @@
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(385, 571);
+            tableLayoutPanel1.Size = new Size(385, 537);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // materialCard1
@@ -78,8 +78,85 @@
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(357, 543);
+            materialCard1.Size = new Size(357, 509);
             materialCard1.TabIndex = 1;
+            // 
+            // materialButton1
+            // 
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.Location = new Point(144, 452);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(76, 36);
+            materialButton1.TabIndex = 22;
+            materialButton1.Text = "VOLVER";
+            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialTextBox28
+            // 
+            materialTextBox28.AnimateReadOnly = false;
+            materialTextBox28.BackgroundImageLayout = ImageLayout.None;
+            materialTextBox28.CharacterCasing = CharacterCasing.Normal;
+            materialTextBox28.Depth = 0;
+            materialTextBox28.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTextBox28.HideSelection = true;
+            materialTextBox28.Hint = "Emails";
+            materialTextBox28.LeadingIcon = null;
+            materialTextBox28.Location = new Point(20, 395);
+            materialTextBox28.MaxLength = 32767;
+            materialTextBox28.MouseState = MaterialSkin.MouseState.OUT;
+            materialTextBox28.Name = "materialTextBox28";
+            materialTextBox28.PasswordChar = '\0';
+            materialTextBox28.PrefixSuffixText = null;
+            materialTextBox28.ReadOnly = true;
+            materialTextBox28.RightToLeft = RightToLeft.No;
+            materialTextBox28.SelectedText = "";
+            materialTextBox28.SelectionLength = 0;
+            materialTextBox28.SelectionStart = 0;
+            materialTextBox28.ShortcutsEnabled = true;
+            materialTextBox28.Size = new Size(320, 48);
+            materialTextBox28.TabIndex = 21;
+            materialTextBox28.TabStop = false;
+            materialTextBox28.TextAlign = HorizontalAlignment.Left;
+            materialTextBox28.TrailingIcon = null;
+            materialTextBox28.UseSystemPasswordChar = false;
+            // 
+            // materialTextBox27
+            // 
+            materialTextBox27.AnimateReadOnly = false;
+            materialTextBox27.BackgroundImageLayout = ImageLayout.None;
+            materialTextBox27.CharacterCasing = CharacterCasing.Normal;
+            materialTextBox27.Depth = 0;
+            materialTextBox27.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTextBox27.HideSelection = true;
+            materialTextBox27.Hint = "Teléfonos";
+            materialTextBox27.LeadingIcon = null;
+            materialTextBox27.Location = new Point(20, 341);
+            materialTextBox27.MaxLength = 32767;
+            materialTextBox27.MouseState = MaterialSkin.MouseState.OUT;
+            materialTextBox27.Name = "materialTextBox27";
+            materialTextBox27.PasswordChar = '\0';
+            materialTextBox27.PrefixSuffixText = null;
+            materialTextBox27.ReadOnly = true;
+            materialTextBox27.RightToLeft = RightToLeft.No;
+            materialTextBox27.SelectedText = "";
+            materialTextBox27.SelectionLength = 0;
+            materialTextBox27.SelectionStart = 0;
+            materialTextBox27.ShortcutsEnabled = true;
+            materialTextBox27.Size = new Size(320, 48);
+            materialTextBox27.TabIndex = 20;
+            materialTextBox27.TabStop = false;
+            materialTextBox27.TextAlign = HorizontalAlignment.Left;
+            materialTextBox27.TrailingIcon = null;
+            materialTextBox27.UseSystemPasswordChar = false;
             // 
             // materialTextBox22
             // 
@@ -255,88 +332,11 @@
             materialTextBox21.TrailingIcon = null;
             materialTextBox21.UseSystemPasswordChar = false;
             // 
-            // materialTextBox27
-            // 
-            materialTextBox27.AnimateReadOnly = false;
-            materialTextBox27.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox27.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox27.Depth = 0;
-            materialTextBox27.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox27.HideSelection = true;
-            materialTextBox27.Hint = "Teléfonos";
-            materialTextBox27.LeadingIcon = null;
-            materialTextBox27.Location = new Point(20, 341);
-            materialTextBox27.MaxLength = 32767;
-            materialTextBox27.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox27.Name = "materialTextBox27";
-            materialTextBox27.PasswordChar = '\0';
-            materialTextBox27.PrefixSuffixText = null;
-            materialTextBox27.ReadOnly = true;
-            materialTextBox27.RightToLeft = RightToLeft.No;
-            materialTextBox27.SelectedText = "";
-            materialTextBox27.SelectionLength = 0;
-            materialTextBox27.SelectionStart = 0;
-            materialTextBox27.ShortcutsEnabled = true;
-            materialTextBox27.Size = new Size(320, 48);
-            materialTextBox27.TabIndex = 20;
-            materialTextBox27.TabStop = false;
-            materialTextBox27.TextAlign = HorizontalAlignment.Left;
-            materialTextBox27.TrailingIcon = null;
-            materialTextBox27.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox28
-            // 
-            materialTextBox28.AnimateReadOnly = false;
-            materialTextBox28.BackgroundImageLayout = ImageLayout.None;
-            materialTextBox28.CharacterCasing = CharacterCasing.Normal;
-            materialTextBox28.Depth = 0;
-            materialTextBox28.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox28.HideSelection = true;
-            materialTextBox28.Hint = "Emails";
-            materialTextBox28.LeadingIcon = null;
-            materialTextBox28.Location = new Point(20, 395);
-            materialTextBox28.MaxLength = 32767;
-            materialTextBox28.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox28.Name = "materialTextBox28";
-            materialTextBox28.PasswordChar = '\0';
-            materialTextBox28.PrefixSuffixText = null;
-            materialTextBox28.ReadOnly = true;
-            materialTextBox28.RightToLeft = RightToLeft.No;
-            materialTextBox28.SelectedText = "";
-            materialTextBox28.SelectionLength = 0;
-            materialTextBox28.SelectionStart = 0;
-            materialTextBox28.ShortcutsEnabled = true;
-            materialTextBox28.Size = new Size(320, 48);
-            materialTextBox28.TabIndex = 21;
-            materialTextBox28.TabStop = false;
-            materialTextBox28.TextAlign = HorizontalAlignment.Left;
-            materialTextBox28.TrailingIcon = null;
-            materialTextBox28.UseSystemPasswordChar = false;
-            // 
-            // materialButton1
-            // 
-            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton1.Depth = 0;
-            materialButton1.HighEmphasis = true;
-            materialButton1.Icon = null;
-            materialButton1.Location = new Point(102, 476);
-            materialButton1.Margin = new Padding(4, 6, 4, 6);
-            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton1.Name = "materialButton1";
-            materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(158, 36);
-            materialButton1.TabIndex = 22;
-            materialButton1.Text = "VOLVER";
-            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton1.UseAccentColor = false;
-            materialButton1.UseVisualStyleBackColor = true;
-            // 
             // frmInformacionPostulante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(391, 638);
+            ClientSize = new Size(391, 604);
             Controls.Add(tableLayoutPanel1);
             Name = "frmInformacionPostulante";
             Text = "DETALLE DE POSTULANTE";
