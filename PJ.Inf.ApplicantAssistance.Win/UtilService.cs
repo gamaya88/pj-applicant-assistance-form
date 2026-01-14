@@ -1,10 +1,20 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.IdentityModel.Tokens;
+using PJ.Inf.ApplicantAssistance.Win.Utils;
 
 namespace PJ.Inf.ApplicantAssistance.Win
 {
     public static class UtilService
     {
+        public static string UsuarioDetectado()
+        {
+            return
+                    Util.LoadConfig().User.IsNullOrEmpty()
+                        ? SystemInformation.UserName.ToUpper()
+                        : Util.LoadConfig().User;
+        }
+
         public static void SetMaterialSkin(this MaterialForm materialForm)
         {
             MaterialSkinManager materialSkinManager;

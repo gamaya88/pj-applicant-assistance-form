@@ -48,6 +48,8 @@ namespace PJ.Inf.ApplicantAssistance.Win
 
         private async void ProcesarIngreso(string dni)
         {
+            toolStripProgressBar1.Visible = true;
+
             var participante = await participanteService.RetornaPorDocumentoIdentidad(dni);
 
             DesignSearchView(participante);
@@ -79,6 +81,8 @@ namespace PJ.Inf.ApplicantAssistance.Win
 
             lblAsistentes.Text = asistentes.ToString();
             lblNoAsistentes.Text = no_asistentes.ToString();
+
+            toolStripProgressBar1.Visible = false;
         }
 
         private void CargaInformacion(Participante? participante)
@@ -122,6 +126,8 @@ namespace PJ.Inf.ApplicantAssistance.Win
         {
             if (e.KeyCode == Keys.Enter && txtBusqueda.Text.Trim().Length >= 3)
             {
+                toolStripProgressBar1.Visible = true;
+
                 var participantes = await participanteService.Busqueda(txtBusqueda.Text);
 
                 dgvBusqueda.DataSource = participantes;
@@ -134,6 +140,8 @@ namespace PJ.Inf.ApplicantAssistance.Win
         {
             if (dgvBusqueda.SelectedRows.Count > 0)
             {
+                toolStripProgressBar1.Visible = true;
+
                 var participanteSeleccionado = dgvBusqueda.SelectedRows[0].DataBoundItem as ParticipanteView;
 
                 var participante = await participanteService.RetornaPorDocumentoIdentidad(participanteSeleccionado.ParDocumentoIdentidad);

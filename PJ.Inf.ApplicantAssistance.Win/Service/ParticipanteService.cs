@@ -20,6 +20,9 @@ namespace PJ.Inf.ApplicantAssistance.Win.Service
         {
             participante.ParEstadoIngreso = EstadoAsistencia.CON_ASISTENCIA;
             participante.ParFechaIngreso = DateTime.Now;
+            participante.SecUsuarioCreacionId = UtilService.UsuarioDetectado();
+            participante.SecUsuarioActualizacionId = UtilService.UsuarioDetectado();
+            participante.SecFechaActualizacion = DateTime.Now;
 
             using (var context = new HelpDeskDbContext())
             {

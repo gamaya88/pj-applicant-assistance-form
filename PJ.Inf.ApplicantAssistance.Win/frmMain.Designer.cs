@@ -56,10 +56,13 @@
             Column4 = new DataGridViewTextBoxColumn();
             txtBusqueda = new MaterialSkin.Controls.MaterialTextBox2();
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            statusStrip1 = new StatusStrip();
+            toolStripProgressBar1 = new ToolStripProgressBar();
             tableLayoutPanel1.SuspendLayout();
             materialCard1.SuspendLayout();
             materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBusqueda).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -69,13 +72,14 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
             tableLayoutPanel1.Controls.Add(materialCard1, 0, 0);
             tableLayoutPanel1.Controls.Add(materialCard2, 1, 0);
+            tableLayoutPanel1.Controls.Add(statusStrip1, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 64);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1279, 611);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tableLayoutPanel1.Size = new Size(1279, 623);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // materialCard1
@@ -105,7 +109,7 @@
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(355, 583);
+            materialCard1.Size = new Size(355, 568);
             materialCard1.TabIndex = 0;
             // 
             // txtPlaza
@@ -399,7 +403,7 @@
             materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard2.Name = "materialCard2";
             materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(868, 583);
+            materialCard2.Size = new Size(868, 568);
             materialCard2.TabIndex = 1;
             // 
             // dgvBusqueda
@@ -496,21 +500,40 @@
             materialLabel6.TabIndex = 0;
             materialLabel6.Text = "LISTADO GENERAL";
             // 
+            // statusStrip1
+            // 
+            tableLayoutPanel1.SetColumnSpan(statusStrip1, 2);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripProgressBar1 });
+            statusStrip1.Location = new Point(0, 601);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1279, 22);
+            statusStrip1.TabIndex = 2;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            toolStripProgressBar1.Name = "toolStripProgressBar1";
+            toolStripProgressBar1.Size = new Size(100, 16);
+            toolStripProgressBar1.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1285, 678);
+            ClientSize = new Size(1285, 690);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
             Text = "ASISTENCIA DE POSTULANTES - 2026";
             Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
             materialCard2.ResumeLayout(false);
             materialCard2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBusqueda).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -545,5 +568,7 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private StatusStrip statusStrip1;
+        private ToolStripProgressBar toolStripProgressBar1;
     }
 }
