@@ -35,7 +35,7 @@ namespace PJ.Inf.ApplicantAssistance.Win
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ProcesarIngreso(txtDniBuscado.Text);
+                await ProcesarIngreso(txtDniBuscado.Text);
 
                 // Limpiar para la siguiente lectura
                 txtDniBuscado.Text = "";
@@ -46,8 +46,12 @@ namespace PJ.Inf.ApplicantAssistance.Win
             }
         }
 
-        private async void ProcesarIngreso(string dni)
+        private async Task ProcesarIngreso(string dni)
         {
+            if (toolStripProgressBar1.Visible)
+            {
+                return;
+            }
             toolStripProgressBar1.Visible = true;
 
             var participante = await participanteService.RetornaPorDocumentoIdentidad(dni);
@@ -108,6 +112,8 @@ namespace PJ.Inf.ApplicantAssistance.Win
         {
             bool found = participante != null;
 
+            label1.Visible = false;
+
             label1.Text = found
                             ? participante.ParEstadoIngreso == EstadoAsistencia.SIN_ASISTENCIA
                                 ? "ASISTENCIA REGISTRADA"
@@ -115,6 +121,8 @@ namespace PJ.Inf.ApplicantAssistance.Win
                             : "NO ENCONTRADO";
 
             label1.BackColor = participante != null && participante.ParEstadoIngreso == EstadoAsistencia.SIN_ASISTENCIA ? Color.Green : Color.Red;
+
+            label1.Visible = true;
         }
 
         private async void Form1_Load(object sender, EventArgs e)
@@ -126,6 +134,11 @@ namespace PJ.Inf.ApplicantAssistance.Win
         {
             if (e.KeyCode == Keys.Enter && txtBusqueda.Text.Trim().Length >= 3)
             {
+                if (toolStripProgressBar1.Visible)
+                {
+                    return;
+                }
+
                 toolStripProgressBar1.Visible = true;
 
                 var participantes = await participanteService.Busqueda(txtBusqueda.Text);
@@ -140,6 +153,11 @@ namespace PJ.Inf.ApplicantAssistance.Win
         {
             if (dgvBusqueda.SelectedRows.Count > 0)
             {
+                if (toolStripProgressBar1.Visible)
+                {
+                    return;
+                }
+
                 toolStripProgressBar1.Visible = true;
 
                 var participanteSeleccionado = dgvBusqueda.SelectedRows[0].DataBoundItem as ParticipanteView;
