@@ -56,7 +56,7 @@ namespace PJ.Inf.ApplicantAssistance.Win.Service
             using var context = new HelpDeskDbContext();
 
             var participante = await context.Participantes
-                            .Where(x => 
+                            .Where(x =>
                                 x.ParDocumentoIdentidad.Contains(termino) ||
                                 x.ParApellidoPaterno.Contains(termino) ||
                                 x.ParApellidoMaterno.Contains(termino) ||
@@ -66,7 +66,9 @@ namespace PJ.Inf.ApplicantAssistance.Win.Service
                                 x.ParPlaza.Contains(termino) ||
                                 x.ParDependencia.Contains(termino) ||
                                 x.ParFicha.Contains(termino)
-                            ).ToListAsync();
+                            ).OrderBy(x => x.ParApellidoPaterno)
+                            .ThenBy(x => x.ParApellidoMaterno)
+                            .ToListAsync();
 
             var participantes = mapper.Map<List<ParticipanteView>>(participante);
 

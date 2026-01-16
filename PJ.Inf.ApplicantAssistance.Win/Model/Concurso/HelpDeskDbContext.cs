@@ -33,6 +33,7 @@ public partial class HelpDeskDbContext : DbContext
             entity.Property(e => e.ParId).HasDefaultValueSql("(newid())");
             entity.Property(e => e.ParApellidoMaterno).HasMaxLength(64);
             entity.Property(e => e.ParApellidoPaterno).HasMaxLength(64);
+            entity.Property(e => e.ParAula).HasMaxLength(32);
             entity.Property(e => e.ParDependencia).HasMaxLength(128);
             entity.Property(e => e.ParDocumentoIdentidad).HasMaxLength(32);
             entity.Property(e => e.ParEmailPersonal).HasMaxLength(64);

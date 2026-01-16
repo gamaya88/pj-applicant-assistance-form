@@ -44,20 +44,20 @@
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             txtDniBuscado = new MaterialSkin.Controls.MaterialTextBox2();
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
             dgvBusqueda = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             txtBusqueda = new MaterialSkin.Controls.MaterialTextBox2();
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             statusStrip1 = new StatusStrip();
             toolStripProgressBar1 = new ToolStripProgressBar();
+            ID = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            ParAula = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             materialCard1.SuspendLayout();
             materialCard2.SuspendLayout();
@@ -74,12 +74,13 @@
             tableLayoutPanel1.Controls.Add(materialCard2, 1, 0);
             tableLayoutPanel1.Controls.Add(statusStrip1, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 64);
+            tableLayoutPanel1.Location = new Point(3, 85);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            tableLayoutPanel1.Size = new Size(1279, 623);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableLayoutPanel1.Size = new Size(1463, 831);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // materialCard1
@@ -99,17 +100,16 @@
             materialCard1.Controls.Add(materialLabel4);
             materialCard1.Controls.Add(materialLabel3);
             materialCard1.Controls.Add(materialLabel2);
-            materialCard1.Controls.Add(materialDivider1);
             materialCard1.Controls.Add(txtDniBuscado);
             materialCard1.Depth = 0;
             materialCard1.Dock = DockStyle.Fill;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(14, 14);
-            materialCard1.Margin = new Padding(14);
+            materialCard1.Location = new Point(16, 19);
+            materialCard1.Margin = new Padding(16, 19, 16, 19);
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
-            materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(355, 568);
+            materialCard1.Padding = new Padding(16, 19, 16, 19);
+            materialCard1.Size = new Size(406, 757);
             materialCard1.TabIndex = 0;
             // 
             // txtPlaza
@@ -120,7 +120,8 @@
             txtPlaza.Depth = 0;
             txtPlaza.HideSelection = true;
             txtPlaza.Hint = "Plaza";
-            txtPlaza.Location = new Point(18, 420);
+            txtPlaza.Location = new Point(21, 560);
+            txtPlaza.Margin = new Padding(3, 4, 3, 4);
             txtPlaza.MaxLength = 32767;
             txtPlaza.MouseState = MaterialSkin.MouseState.OUT;
             txtPlaza.Name = "txtPlaza";
@@ -131,7 +132,7 @@
             txtPlaza.SelectionLength = 0;
             txtPlaza.SelectionStart = 0;
             txtPlaza.ShortcutsEnabled = true;
-            txtPlaza.Size = new Size(320, 67);
+            txtPlaza.Size = new Size(366, 89);
             txtPlaza.TabIndex = 20;
             txtPlaza.TabStop = false;
             txtPlaza.TextAlign = HorizontalAlignment.Center;
@@ -145,7 +146,8 @@
             txtDependencia2.Depth = 0;
             txtDependencia2.HideSelection = true;
             txtDependencia2.Hint = "Dependencia";
-            txtDependencia2.Location = new Point(17, 354);
+            txtDependencia2.Location = new Point(19, 472);
+            txtDependencia2.Margin = new Padding(3, 4, 3, 4);
             txtDependencia2.MaxLength = 32767;
             txtDependencia2.MouseState = MaterialSkin.MouseState.OUT;
             txtDependencia2.Name = "txtDependencia2";
@@ -156,7 +158,7 @@
             txtDependencia2.SelectionLength = 0;
             txtDependencia2.SelectionStart = 0;
             txtDependencia2.ShortcutsEnabled = true;
-            txtDependencia2.Size = new Size(321, 60);
+            txtDependencia2.Size = new Size(367, 80);
             txtDependencia2.TabIndex = 19;
             txtDependencia2.TabStop = false;
             txtDependencia2.TextAlign = HorizontalAlignment.Center;
@@ -165,9 +167,9 @@
             // lblNoAsistentes
             // 
             lblNoAsistentes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNoAsistentes.Location = new Point(257, 529);
+            lblNoAsistentes.Location = new Point(303, 705);
             lblNoAsistentes.Name = "lblNoAsistentes";
-            lblNoAsistentes.Size = new Size(53, 37);
+            lblNoAsistentes.Size = new Size(83, 49);
             lblNoAsistentes.TabIndex = 17;
             lblNoAsistentes.Text = "####";
             lblNoAsistentes.TextAlign = ContentAlignment.MiddleCenter;
@@ -175,9 +177,9 @@
             // lblAsistentes
             // 
             lblAsistentes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAsistentes.Location = new Point(115, 529);
+            lblAsistentes.Location = new Point(131, 705);
             lblAsistentes.Name = "lblAsistentes";
-            lblAsistentes.Size = new Size(62, 37);
+            lblAsistentes.Size = new Size(78, 49);
             lblAsistentes.TabIndex = 16;
             lblAsistentes.Text = "####";
             lblAsistentes.TextAlign = ContentAlignment.MiddleCenter;
@@ -185,9 +187,9 @@
             // label1
             // 
             label1.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(17, 124);
+            label1.Location = new Point(19, 165);
             label1.Name = "label1";
-            label1.Size = new Size(321, 37);
+            label1.Size = new Size(367, 87);
             label1.TabIndex = 15;
             label1.Text = "NO ENCONTRADO";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -196,10 +198,10 @@
             // 
             materialLabel10.Depth = 0;
             materialLabel10.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel10.Location = new Point(180, 538);
+            materialLabel10.Location = new Point(215, 717);
             materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel10.Name = "materialLabel10";
-            materialLabel10.Size = new Size(10, 23);
+            materialLabel10.Size = new Size(11, 31);
             materialLabel10.TabIndex = 14;
             materialLabel10.Text = "|";
             // 
@@ -207,10 +209,10 @@
             // 
             materialLabel7.Depth = 0;
             materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel7.Location = new Point(196, 538);
+            materialLabel7.Location = new Point(233, 717);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
-            materialLabel7.Size = new Size(55, 23);
+            materialLabel7.Size = new Size(63, 31);
             materialLabel7.TabIndex = 11;
             materialLabel7.Text = "Faltan:";
             // 
@@ -224,7 +226,8 @@
             txtNombres.HideSelection = true;
             txtNombres.Hint = "Nombres";
             txtNombres.LeadingIcon = null;
-            txtNombres.Location = new Point(18, 300);
+            txtNombres.Location = new Point(21, 400);
+            txtNombres.Margin = new Padding(3, 4, 3, 4);
             txtNombres.MaxLength = 32767;
             txtNombres.MouseState = MaterialSkin.MouseState.OUT;
             txtNombres.Name = "txtNombres";
@@ -236,7 +239,7 @@
             txtNombres.SelectionLength = 0;
             txtNombres.SelectionStart = 0;
             txtNombres.ShortcutsEnabled = true;
-            txtNombres.Size = new Size(320, 48);
+            txtNombres.Size = new Size(366, 48);
             txtNombres.TabIndex = 7;
             txtNombres.TabStop = false;
             txtNombres.TextAlign = HorizontalAlignment.Center;
@@ -253,7 +256,8 @@
             txtApellidos.HideSelection = true;
             txtApellidos.Hint = "Apellidos";
             txtApellidos.LeadingIcon = null;
-            txtApellidos.Location = new Point(17, 246);
+            txtApellidos.Location = new Point(19, 328);
+            txtApellidos.Margin = new Padding(3, 4, 3, 4);
             txtApellidos.MaxLength = 32767;
             txtApellidos.MouseState = MaterialSkin.MouseState.OUT;
             txtApellidos.Name = "txtApellidos";
@@ -265,7 +269,7 @@
             txtApellidos.SelectionLength = 0;
             txtApellidos.SelectionStart = 0;
             txtApellidos.ShortcutsEnabled = true;
-            txtApellidos.Size = new Size(321, 48);
+            txtApellidos.Size = new Size(367, 48);
             txtApellidos.TabIndex = 6;
             txtApellidos.TabStop = false;
             txtApellidos.TextAlign = HorizontalAlignment.Center;
@@ -282,7 +286,8 @@
             txtDni.HideSelection = true;
             txtDni.Hint = "DNI";
             txtDni.LeadingIcon = null;
-            txtDni.Location = new Point(17, 192);
+            txtDni.Location = new Point(19, 256);
+            txtDni.Margin = new Padding(3, 4, 3, 4);
             txtDni.MaxLength = 32767;
             txtDni.MouseState = MaterialSkin.MouseState.OUT;
             txtDni.Name = "txtDni";
@@ -294,7 +299,7 @@
             txtDni.SelectionLength = 0;
             txtDni.SelectionStart = 0;
             txtDni.ShortcutsEnabled = true;
-            txtDni.Size = new Size(321, 48);
+            txtDni.Size = new Size(367, 48);
             txtDni.TabIndex = 5;
             txtDni.TabStop = false;
             txtDni.TextAlign = HorizontalAlignment.Center;
@@ -306,7 +311,7 @@
             materialLabel5.AutoSize = true;
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel5.Location = new Point(18, 17);
+            materialLabel5.Location = new Point(21, 23);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             materialLabel5.Size = new Size(141, 19);
@@ -318,7 +323,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(53, 508);
+            materialLabel4.Location = new Point(61, 677);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(78, 19);
@@ -330,7 +335,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(24, 105);
+            materialLabel3.Location = new Point(27, 140);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(66, 19);
@@ -341,23 +346,12 @@
             // 
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(41, 538);
+            materialLabel2.Location = new Point(47, 717);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(114, 23);
+            materialLabel2.Size = new Size(130, 31);
             materialLabel2.TabIndex = 10;
             materialLabel2.Text = "Presentes:";
-            // 
-            // materialDivider1
-            // 
-            materialDivider1.BackColor = Color.FromArgb(30, 0, 0, 0);
-            materialDivider1.Depth = 0;
-            materialDivider1.Location = new Point(17, 164);
-            materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialDivider1.Name = "materialDivider1";
-            materialDivider1.Size = new Size(321, 10);
-            materialDivider1.TabIndex = 4;
-            materialDivider1.Text = "materialDivider1";
             // 
             // txtDniBuscado
             // 
@@ -369,7 +363,8 @@
             txtDniBuscado.HideSelection = true;
             txtDniBuscado.Hint = "Esperando lectura de DNI...";
             txtDniBuscado.LeadingIcon = null;
-            txtDniBuscado.Location = new Point(17, 48);
+            txtDniBuscado.Location = new Point(19, 64);
+            txtDniBuscado.Margin = new Padding(3, 4, 3, 4);
             txtDniBuscado.MaxLength = 32767;
             txtDniBuscado.MouseState = MaterialSkin.MouseState.OUT;
             txtDniBuscado.Name = "txtDniBuscado";
@@ -381,7 +376,7 @@
             txtDniBuscado.SelectionLength = 0;
             txtDniBuscado.SelectionStart = 0;
             txtDniBuscado.ShortcutsEnabled = true;
-            txtDniBuscado.Size = new Size(321, 48);
+            txtDniBuscado.Size = new Size(367, 48);
             txtDniBuscado.TabIndex = 1;
             txtDniBuscado.TabStop = false;
             txtDniBuscado.TextAlign = HorizontalAlignment.Left;
@@ -398,65 +393,25 @@
             materialCard2.Depth = 0;
             materialCard2.Dock = DockStyle.Fill;
             materialCard2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard2.Location = new Point(397, 14);
-            materialCard2.Margin = new Padding(14);
+            materialCard2.Location = new Point(454, 19);
+            materialCard2.Margin = new Padding(16, 19, 16, 19);
             materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard2.Name = "materialCard2";
-            materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(868, 568);
+            materialCard2.Padding = new Padding(16, 19, 16, 19);
+            materialCard2.Size = new Size(993, 757);
             materialCard2.TabIndex = 1;
             // 
             // dgvBusqueda
             // 
             dgvBusqueda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBusqueda.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, Column5, Column2, Column3, Column4 });
-            dgvBusqueda.Location = new Point(17, 71);
+            dgvBusqueda.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, ParAula, Column5, Column2, Column3, Column4 });
+            dgvBusqueda.Location = new Point(19, 95);
+            dgvBusqueda.Margin = new Padding(3, 4, 3, 4);
             dgvBusqueda.Name = "dgvBusqueda";
-            dgvBusqueda.Size = new Size(834, 480);
+            dgvBusqueda.RowHeadersWidth = 51;
+            dgvBusqueda.Size = new Size(953, 640);
             dgvBusqueda.TabIndex = 2;
             dgvBusqueda.CellDoubleClick += dgvBusqueda_CellDoubleClick;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "ParId";
-            ID.HeaderText = "Column6";
-            ID.Name = "ID";
-            ID.Visible = false;
-            // 
-            // Column1
-            // 
-            Column1.DataPropertyName = "ParDocumentoIdentidad";
-            Column1.HeaderText = "DNI";
-            Column1.Name = "Column1";
-            Column1.Width = 80;
-            // 
-            // Column5
-            // 
-            Column5.DataPropertyName = "ParFechaIngreso";
-            Column5.HeaderText = "HORA INGRESO";
-            Column5.Name = "Column5";
-            Column5.Width = 180;
-            // 
-            // Column2
-            // 
-            Column2.DataPropertyName = "ParNombres";
-            Column2.HeaderText = "NOMBRES";
-            Column2.Name = "Column2";
-            Column2.Width = 300;
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "ParDependencia";
-            Column3.HeaderText = "DEPENDENCIA";
-            Column3.Name = "Column3";
-            Column3.Width = 300;
-            // 
-            // Column4
-            // 
-            Column4.DataPropertyName = "ParPlaza";
-            Column4.HeaderText = "PLAZA";
-            Column4.Name = "Column4";
-            Column4.Width = 300;
             // 
             // txtBusqueda
             // 
@@ -468,7 +423,8 @@
             txtBusqueda.HideSelection = true;
             txtBusqueda.Hint = "Buscar:";
             txtBusqueda.LeadingIcon = null;
-            txtBusqueda.Location = new Point(180, 17);
+            txtBusqueda.Location = new Point(206, 23);
+            txtBusqueda.Margin = new Padding(3, 4, 3, 4);
             txtBusqueda.MaxLength = 32767;
             txtBusqueda.MouseState = MaterialSkin.MouseState.OUT;
             txtBusqueda.Name = "txtBusqueda";
@@ -480,7 +436,7 @@
             txtBusqueda.SelectionLength = 0;
             txtBusqueda.SelectionStart = 0;
             txtBusqueda.ShortcutsEnabled = true;
-            txtBusqueda.Size = new Size(671, 48);
+            txtBusqueda.Size = new Size(767, 48);
             txtBusqueda.TabIndex = 1;
             txtBusqueda.TabStop = false;
             txtBusqueda.TextAlign = HorizontalAlignment.Left;
@@ -493,7 +449,7 @@
             materialLabel6.AutoSize = true;
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel6.Location = new Point(17, 26);
+            materialLabel6.Location = new Point(19, 35);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
             materialLabel6.Size = new Size(139, 19);
@@ -503,26 +459,87 @@
             // statusStrip1
             // 
             tableLayoutPanel1.SetColumnSpan(statusStrip1, 2);
+            statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripProgressBar1 });
-            statusStrip1.Location = new Point(0, 601);
+            statusStrip1.Location = new Point(0, 809);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1279, 22);
+            statusStrip1.Padding = new Padding(1, 0, 16, 0);
+            statusStrip1.Size = new Size(1463, 22);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
             // toolStripProgressBar1
             // 
             toolStripProgressBar1.Name = "toolStripProgressBar1";
-            toolStripProgressBar1.Size = new Size(100, 16);
+            toolStripProgressBar1.Size = new Size(114, 21);
             toolStripProgressBar1.Visible = false;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ParId";
+            ID.HeaderText = "Column6";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            ID.Visible = false;
+            ID.Width = 125;
+            // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "ParDocumentoIdentidad";
+            Column1.HeaderText = "DNI";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 80;
+            // 
+            // ParAula
+            // 
+            ParAula.DataPropertyName = "ParAula";
+            ParAula.HeaderText = "AULA";
+            ParAula.MinimumWidth = 6;
+            ParAula.Name = "ParAula";
+            ParAula.Width = 125;
+            // 
+            // Column5
+            // 
+            Column5.DataPropertyName = "ParFechaIngreso";
+            Column5.HeaderText = "HORA INGRESO";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Width = 180;
+            // 
+            // Column2
+            // 
+            Column2.DataPropertyName = "ParNombres";
+            Column2.HeaderText = "NOMBRES";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "ParDependencia";
+            Column3.HeaderText = "DEPENDENCIA";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.Width = 300;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "ParPlaza";
+            Column4.HeaderText = "PLAZA";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.Width = 300;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1285, 690);
+            ClientSize = new Size(1469, 920);
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
+            Padding = new Padding(3, 85, 3, 4);
             Text = "ASISTENCIA DE POSTULANTES - 2026";
             Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
@@ -543,7 +560,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialTextBox2 txtDniBuscado;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -562,13 +578,14 @@
         private MaterialSkin.Controls.MaterialTextBox2 materialMultiLineTextBox21;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDependencia2;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtPlaza;
+        private StatusStrip statusStrip1;
+        private ToolStripProgressBar toolStripProgressBar1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn ParAula;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private StatusStrip statusStrip1;
-        private ToolStripProgressBar toolStripProgressBar1;
     }
 }

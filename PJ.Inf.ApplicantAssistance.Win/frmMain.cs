@@ -28,7 +28,7 @@ namespace PJ.Inf.ApplicantAssistance.Win
             label1.ForeColor = Color.White;
             lblNoAsistentes.Font =
             lblAsistentes.Font =
-            label1.Font = new Font("Consolas", 14, FontStyle.Bold);
+            label1.Font = new Font("Consolas", 18, FontStyle.Bold);
         }
 
         private async void txtDniBuscado_KeyDown(object sender, KeyEventArgs e)
@@ -116,8 +116,8 @@ namespace PJ.Inf.ApplicantAssistance.Win
 
             label1.Text = found
                             ? participante.ParEstadoIngreso == EstadoAsistencia.SIN_ASISTENCIA
-                                ? "ASISTENCIA REGISTRADA"
-                                : "ASISTENCIA YA EXISTE"
+                                ? $"ASISTENCIA REGISTRADA{Environment.NewLine}AULA: {participante.ParAula.ToString()}"
+                                : $"ASISTENCIA YA EXISTE{Environment.NewLine}AULA: {participante.ParAula.ToString()}"
                             : "NO ENCONTRADO";
 
             label1.BackColor = participante != null && participante.ParEstadoIngreso == EstadoAsistencia.SIN_ASISTENCIA ? Color.Green : Color.Red;

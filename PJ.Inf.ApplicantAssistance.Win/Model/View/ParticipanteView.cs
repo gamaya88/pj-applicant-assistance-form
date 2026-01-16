@@ -15,5 +15,7 @@
         public string ParDependencia { get; set; } = null!;
 
         public string ParFicha { get; set; } = null!;
+
+        public string ParAula { get; set; } = null!;
     }
 }

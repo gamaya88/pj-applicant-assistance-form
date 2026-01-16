@@ -39,6 +39,8 @@ public partial class Participante
 
     public byte? ParEstadoIngreso { get; set; }
 
+    public string? ParAula { get; set; }
+
     public bool? SecActivo { get; set; }
 
     public string SecUsuarioCreacionId { get; set; } = null!;
